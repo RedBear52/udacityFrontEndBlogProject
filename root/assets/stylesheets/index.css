@@ -1,0 +1,106 @@
+/* -------------------  GENERAL SITE STYLES/RESETS ------------------ */
+/* My inital resets based on KPowell's Variation on Andy Bell's reset:
+    https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset Margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* Body Settings */
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* Image Settings */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Form Element Settings */
+/* (probably won't be using on this particular product BUT
+important , mostly to acccomodate inheritance of upstream settings */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove Animations for Users Who Have Turned Them Off 
+this is primarily an ACCESSIBILITY concern*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem)
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem)
+}
+
+.container {
+    padding: 0, 2em;
+    margin: 0, auto;
+    max-width: 80rem;
+}
+/* Could add align and justify classes here if necessary */
+
+.sr-only {  
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+  /* TODO: Check this SR ONLY RULESET (taken from previous Udacity project) against     
+    Andy Bell/Kevin Powell to gain a better understanding of what's goin on */
+
+
+/* -------------------  MOBILE  --------------------- */
+
+
+
+/* -------------------  TABLET  --------------------- */
+  
+ /* -------------------  DESKTOP  -------------------- */
+  
+/* -------------------  LARGE SCREENS  -------------- */
+  
