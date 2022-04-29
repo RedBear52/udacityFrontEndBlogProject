@@ -2,6 +2,8 @@
 /* My inital resets based on KPowell's Variation on Andy Bell's reset:
     https://piccalil.li/blog/a-modern-css-reset/ */
 
+@import url('../assets/stylesheets/posts.css');
+
 /* Color Palette */
 :root {
     --darkest: #000814ff;
@@ -33,6 +35,33 @@ picture {
     margin: 0;
 }
 
+/*-------- ACCESSIBILITY SETTINGS ------- */
+/* Remove Animations for Users Who Have Turned Them Off 
+this is primarily an ACCESSIBILITY concern*/
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  .sr-only {  
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap; /* added this line to ruleset provided in previous Udacity project */
+      border: 0;
+    }
+
+/* -------------------  MOBILE  --------------------- */
 /* Body Settings */
 body {
     line-height: 1.5;
@@ -45,6 +74,17 @@ img {
     display: block;
 }
 
+h1 {
+    display: inline-block;
+    text-align: center;
+    transform: translateY(-25px);
+}
+
+p {
+    display: inline-block;
+    max-width: 100%;
+}
+
 /* Form Element Settings */
 /* (probably won't be using MUCH on this particular product BUT
 important for acccomodating inheritance of upstream settings */
@@ -55,18 +95,7 @@ select {
     font: inherit;
 }
 
-/* Remove Animations for Users Who Have Turned Them Off 
-this is primarily an ACCESSIBILITY concern*/
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+
 
 /* --------------- */
 /* Utility Classes */
@@ -74,44 +103,112 @@ this is primarily an ACCESSIBILITY concern*/
 
 .flex {
     display: flex;
-    gap: var(--gap, 1rem)
+    gap: var(--gap, 0.5rem)
 }
 
 .grid {
     display: grid;
-    gap: var(--gap, 1rem)
+    gap: var(--gap, 0.5rem)
 }
 
 .container {
     padding: 0 2em;
     margin: 0 auto;
-    max-width: 80rem;
-    /* display: inline-block; */
+    max-width: 100vw;
+    min-height: 100vh;
     align-items: center;
+    grid-template-columns: 10%;
+    grid-template-rows: 10vh;
+    grid-template-areas: 
+    "hd hd hd hd hd hd hd hd hd hd"
+    "sn nb sb sb cont cont cont cont cont cont"
+    "sn nb sb sb cont cont cont cont cont cont"
+    "sn nb sb sb cont cont cont cont cont cont"
+    "sn nb sb sb cont cont cont cont cont cont"
+    "sn nb sb sb cont cont cont cont cont cont"
+    "sn nb sb sb cont cont cont cont cont cont"
+    "sn nb sb sb cont cont cont cont cont cont"
+    "sn nb sb sb cont cont cont cont cont cont"
+    /* "ft ft ft ft ft ft ft ft ft ft" */
+    ; 
+/* temp border properties */
+    border: 2px solid red;
 }
 /* Could add align and justify classes here if necessary */
 
-.sr-only {  
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap; /* added line */
-    border: 0;
-  }
-  /* TODO: Check this SR ONLY RULESET (taken from previous Udacity project) against     
-    Andy Bell/Kevin Powell to gain a better understanding of what's goin on */
-
 .box {
     padding: 2rem;
+    width: 100%;
+    height: 100%;
+    
+/* temp border properties */
+    border: 2px solid fuchsia;
+}
+.nav-link-box {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.text {
+    /* display: inline-block; */
+    position: absolute;
+}
+
+.article-text-area {
+}
+
+#header {
+    grid-area: hd;
+    background-color: var(--light);
+    align-items: center;
+}
+
+#nav {
+    grid-area: nb;
+    /* background-color: var(--lightest); */
+    color: var(--darkest);
+}
+
+#side-nav {
+    grid-area: sn;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    text-align: right;
+    transform: rotate(-180deg);
+    /* background-color: var(--lightest); */
+    color: var(--darkest);
+    padding: 0.25em;
+}
+
+#sidebar {
+    grid-area: sb;
+    background-image: url('../images/jacques.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position-x: -4s5px;
+    object-fit: cover;
+    color: white;
+}
+
+#content {
+    grid-area: cont;
+    background-color: var(--middlest);
+    color: white;
+    align-items: center;
+}
+
+#footer {
+    grid-area: ft;
+
     background-color: var(--light);
 }
 
+#gallery {
+    grid-area: gall; 
 
-/* -------------------  MOBILE  --------------------- */
+    background-color: var(--lightest);
+}
 
 
 
