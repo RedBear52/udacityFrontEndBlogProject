@@ -82,7 +82,7 @@ h1 {
 
 p {
     display: inline-block;
-    max-width: 100%;
+    /* max-width: 50%; */
 }
 
 /* Form Element Settings */
@@ -121,18 +121,18 @@ select {
     grid-template-rows: 10vh;
     grid-template-areas: 
     "hd hd hd hd hd hd hd hd hd hd"
-    "sn nb sb sb cont cont cont cont cont cont"
-    "sn nb sb sb cont cont cont cont cont cont"
-    "sn nb sb sb cont cont cont cont cont cont"
-    "sn nb sb sb cont cont cont cont cont cont"
-    "sn nb sb sb cont cont cont cont cont cont"
-    "sn nb sb sb cont cont cont cont cont cont"
-    "sn nb sb sb cont cont cont cont cont cont"
-    "sn nb sb sb cont cont cont cont cont cont"
+    "sn nb sb sb sb cont cont cont cont cont"
+    "sn nb sb sb sb cont cont cont cont cont"
+    "sn nb sb sb sb cont cont cont cont cont"
+    "sn nb sb sb sb cont cont cont cont cont"
+    "sn nb sb sb sb cont cont cont cont cont"
+    "sn nb sb sb sb cont cont cont cont cont"
+    "sn nb sb sb sb cont cont cont cont cont"
+    "sn nb sb sb sb cont cont cont cont cont"
     /* "ft ft ft ft ft ft ft ft ft ft" */
     ; 
 /* temp border properties */
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 /* Could add align and justify classes here if necessary */
 
@@ -142,7 +142,7 @@ select {
     height: 100%;
     
 /* temp border properties */
-    border: 2px solid fuchsia;
+    /* border: 2px solid fuchsia; */
 }
 .nav-link-box {
     justify-content: center;
@@ -156,11 +156,13 @@ select {
 }
 
 .article-text-area {
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 #header {
     grid-area: hd;
-    background-color: var(--light);
+    /* background-color: var(--light); */
     align-items: center;
 }
 
@@ -193,8 +195,8 @@ select {
 
 #content {
     grid-area: cont;
-    background-color: var(--middlest);
-    color: white;
+    /* background-color: var(--middlest); */
+    color: var(--darkest);
     align-items: center;
 }
 
@@ -207,7 +209,7 @@ select {
 #gallery {
     grid-area: gall; 
 
-    background-color: var(--lightest);
+    /* background-color: var(--lightest); */
 }
 
 
