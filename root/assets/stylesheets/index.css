@@ -2,6 +2,16 @@
 /* My inital resets based on KPowell's Variation on Andy Bell's reset:
     https://piccalil.li/blog/a-modern-css-reset/ */
 
+/* Color Palette */
+:root {
+    --darkest: #000814ff;
+    --dark: #001d3dff;
+    --middlest: #003566ff;
+    --light: #ffc300ff;
+    --lightest: #ffd60aff;
+}
+
+
 /* Box Sizing */
 *,
 *::before,
@@ -36,8 +46,8 @@ img {
 }
 
 /* Form Element Settings */
-/* (probably won't be using on this particular product BUT
-important , mostly to acccomodate inheritance of upstream settings */
+/* (probably won't be using MUCH on this particular product BUT
+important for acccomodating inheritance of upstream settings */
 input,
 button,
 textarea,
@@ -73,9 +83,11 @@ this is primarily an ACCESSIBILITY concern*/
 }
 
 .container {
-    padding: 0, 2em;
-    margin: 0, auto;
+    padding: 0 2em;
+    margin: 0 auto;
     max-width: 80rem;
+    /* display: inline-block; */
+    align-items: center;
 }
 /* Could add align and justify classes here if necessary */
 
@@ -92,6 +104,11 @@ this is primarily an ACCESSIBILITY concern*/
   }
   /* TODO: Check this SR ONLY RULESET (taken from previous Udacity project) against     
     Andy Bell/Kevin Powell to gain a better understanding of what's goin on */
+
+.box {
+    padding: 2rem;
+    background-color: var(--light);
+}
 
 
 /* -------------------  MOBILE  --------------------- */
