@@ -4,15 +4,19 @@
 
 @import url('../assets/stylesheets/posts.css');
 
-/* Color Palette */
 :root {
+/* Color Palette */
     --darkest: #000814ff;
     --dark: #001d3dff;
     --middlest: #003566ff;
     --light: #ffc300ff;
     --lightest: #ffd60aff;
-}
 
+    --light-grey: rgb(144, 142, 142);
+
+/* Design Components */
+    --border: solid .05em var(--darkest); 
+}
 
 /* Box Sizing */
 *,
@@ -77,14 +81,15 @@ img {
 
 h1 {
     font-family: 'Montserrat Subrayada';
-    font-size: 5rem;
+    font-size: 4rem;
     display: inline-block;
     text-align: center;
-    transform: translateY(-25px);
+    transform: translateY(-40px);
 }
 
 h2 {
-    font-family: 'Montserrat Subrayada';
+    font-family: 'Montserrat';
+    /* padding-bottom: 1em; */
 }
 
 p {
@@ -101,7 +106,6 @@ textarea,
 select {
     font: inherit;
 }
-
 
 
 /* --------------- */
@@ -124,22 +128,20 @@ select {
     max-width: 100vw;
     min-height: 100vh;
     align-items: center;
-    grid-template-columns: 10%;
+    grid-template-columns: 5vw;
     grid-template-rows: 10vh;
     grid-template-areas: 
-    "hd hd hd hd hd hd hd hd hd hd"
-    "sn nb sb sb sb cont cont cont cont cont"
-    "sn nb sb sb sb cont cont cont cont cont"
-    "sn nb sb sb sb cont cont cont cont cont"
-    "sn nb sb sb sb cont cont cont cont cont"
-    "sn nb sb sb sb cont cont cont cont cont"
-    "sn nb sb sb sb cont cont cont cont cont"
-    "sn nb sb sb sb cont cont cont cont cont"
-    "sn nb sb sb sb cont cont cont cont cont"
-    /* "ft ft ft ft ft ft ft ft ft ft" */
+    "hd hd hd hd hd hd hd hd hd hd hd"
+    "sn nb nb sb sb sb cont cont cont cont cont"
+    "sn nb nb sb sb sb cont cont cont cont cont"
+    "sn nb nb sb sb sb cont cont cont cont cont"
+    "sn nb nb sb sb sb cont cont cont cont cont"
+    "sn nb nb sb sb sb cont cont cont cont cont"
+    "sn nb nb sb sb sb cont cont cont cont cont"
+    "sn nb nb sb sb sb cont cont cont cont cont"
+    "sn nb nb sb sb sb cont cont cont cont cont"
+    "ft ft ft ft ft ft ft ft ft ft ft"
     ; 
-/* temp border properties */
-    /* border: 2px solid red; */
 }
 /* Could add align and justify classes here if necessary */
 
@@ -147,18 +149,19 @@ select {
     padding: 2rem;
     width: 100%;
     height: 100%;
-    
-/* temp border properties */
-    /* border: 2px solid fuchsia; */
+  
 }
-.nav-link-box {
+.nav-link-box.flex {
     justify-content: center;
     align-items: center;
     position: relative;
+    border-top: 1px solid rgba(144, 142, 142, 0.3);
+    border-width: .175em;
+    border-color: var(--light-grey);
+    opacity: 0.6;
 }
 
 .text {
-    /* display: inline-block; */
     position: absolute;
 }
 
@@ -167,27 +170,49 @@ select {
     align-items: center;
 }
 
+#wrestling {
+    color: var(--darkest);
+    opacity: 1;
+}
+
 #header {
     grid-area: hd;
-    /* background-color: var(--light); */
-    align-items: center;
+    border-bottom: 1px solid rgba(144, 142, 142, 0.3);
+    border-width: .175em;
+
 }
 
-#nav {
+#nav.box.grid {
     grid-area: nb;
-    /* background-color: var(--lightest); */
     color: var(--darkest);
+    border-left: 1px solid rgba(144, 142, 142, 0.3);
+    opacity: 0.6; 
+    border-right: 1px solid rgba(144, 142, 142, 0.3); 
+    border-width: .175em;
+    border-color: var(--light-grey);
+    cursor: pointer;
+    margin-top: 4em;
 }
 
-#side-nav {
+
+#side-nav.box.grid {
     grid-area: sn;
     writing-mode: vertical-rl;
     text-orientation: sideways;
     text-align: right;
     transform: rotate(-180deg);
-    /* background-color: var(--lightest); */
     color: var(--darkest);
     padding: 0.25em;
+    margin-top: 3.5em;
+}
+
+.nav-link-box#wrestling {
+    border-top: 0;
+    transform: translateY(-25px);
+}
+
+span.text#playing {
+    transform: translateY(25px);
 }
 
 #sidebar {
@@ -196,15 +221,12 @@ select {
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 16px;
-    /* background-position-x: -45px; */
     background-position-y: 110px;
-    /* object-fit: cover; */
     color: white;
 }
 
 #content {
     grid-area: cont;
-    /* background-color: var(--middlest); */
     color: var(--darkest);
     align-items: center;
 }
@@ -218,7 +240,6 @@ select {
 #gallery {
     grid-area: gall; 
 
-    /* background-color: var(--lightest); */
 }
 
 
