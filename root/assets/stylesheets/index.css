@@ -32,6 +32,7 @@ h6,
 p,
 figure,
 picture {
+    font-family: 'Montserrat';
     margin: 0;
 }
 
@@ -75,9 +76,15 @@ img {
 }
 
 h1 {
+    font-family: 'Montserrat Subrayada';
+    font-size: 5rem;
     display: inline-block;
     text-align: center;
     transform: translateY(-25px);
+}
+
+h2 {
+    font-family: 'Montserrat Subrayada';
 }
 
 p {
@@ -186,10 +193,12 @@ select {
 #sidebar {
     grid-area: sb;
     background-image: url('../images/jacques.jpg');
-    background-repeat: none;
-    background-size: cover;
-    background-position-x: -4s5px;
-    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 16px;
+    /* background-position-x: -45px; */
+    background-position-y: 110px;
+    /* object-fit: cover; */
     color: white;
 }
 
