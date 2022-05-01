@@ -175,7 +175,7 @@ select {
 }
 
 .selected {
-    color: var(--lightest);
+    color: var(--light);
     font-weight: bold;
     opacity: 1;
 }
@@ -233,7 +233,6 @@ span.text#playing {
     grid-area: sb;
     grid-column: 4 / 9;
     background-image: url('../images/otoole.jpg');
-    /* background-image: url('../images/surtin.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -263,23 +262,148 @@ span.text#playing {
 
 #gallery {
     grid-area: gall; 
-
 }
 
 
 
 /* -------------------  TABLET  --------------------- */
-@media screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+    i {
+        display: inline-block;
+        text-align: center;
+        width: 30%;
+    }
+
+    .container {
+        margin: 0;
+        display: flex;
+        padding: 0.25em;
+        align-items: center;
+        flex-direction: column;
+    }
+
+   #sidebar,
+   #footer,
+   #content,
+   #header,
+   #icons,
+   #nav,
+   #side-nav {
+      display: inline-block;
+      min-width: 100%;
+      /* background-color: chartreuse; */
+   }
+
+
+   #header {
+        order: -5;
+        text-align: center;
+        padding: unset;
+    }
+
+    h1 {
+        transform: translate(0, 5px);
+        margin: 0;
+    }
+
+    #side-nav.box.grid {
+        order: -4;
+        writing-mode: unset;
+        text-orientation: unset;
+        text-align: center;
+        transform: unset;
+        color: var(--darkest);
+        padding: unset;
+        margin-top: unset;
+
+    }
+
+    #icons.box.grid {
+        display: flex;
+        order: -3;
+        background-color: chocolate;
+        transform: translate(0, 0);
+        background-color: var(--light);
+
+    }
+
+
+    #content {
+        order: -2;
+    }
+
+    #nav {
+        order: -1;
+    }
+
+    #nav.box.grid {
+        display: none;
+        z-index: -2;
+        all: unset;
+    }
+
+    #footer {
+        order: 1;
+        text-align: center;
+    }
+
+    #sidebar {
+        order: 0;
+    }
+
+    /* .nomobile {
+        display: none;
+    } */
+
+    .nav-link-box.flex {
+        display: flex;
+        min-width: 100%;
+        background-color: chocolate;
+    }
+
+    #playing.nav-link-box.flex {
+        background-color: chartreuse;
+        z-index: -2;
+        display: none;
+        border: none;
+    }
+
+    #wrestling.nav-link-box.flex {
+        background-color: chartreuse;
+        z-index: -2;
+        display: none;
+        border: none;
+    }
+
+    #speaking.nav-link-box.flex {
+        background-color: chartreuse;
+        z-index: -2;
+        display: none;
+        border: none;
+    }
+
+    /* .nav-link-box {
+        transform: translateY(0, 0);
+        justify-content: space-evenly;
+    } */
     
+    span.text#playing {
+        transform: translateY(0, 0);
+    }
 }
 
+
+
+
 /* -------------------  LAPTOP  --------------------- */
-@media screen and (min-width: 678px) {
-    
-}
+/* @media screen and (min-width: 100) {
+   #sidebar {
+       display: none;
+   }
+} */
  /* -------------------  DESKTOP  -------------------- */
-@media (min-width: 1040px) {
-    
-}
+/* @media (min-width: 1200px) {
+   
+} */
 /* -------------------  LARGE SCREENS  -------------- */
   
