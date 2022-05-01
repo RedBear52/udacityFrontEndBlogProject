@@ -155,16 +155,6 @@ select {
     height: 100%;
 }
 
-.icons {
-    /* grid-area: hd; */
-    /* display: inline-block; */
-    /* background-color: chartreuse; */
-    margin-left: 1.5em;
-    /* z-index: 1; */
-    /* margin: 0; */
-    /* transform: translate(85%); */
-}
-
 .nav-link-box.flex {
     justify-content: center;
     align-items: center;
@@ -196,7 +186,15 @@ select {
     grid-area: hd;
     border-bottom: 1px solid rgba(144, 142, 142, 0.3);
     border-width: .175em;
+}
 
+#icons { 
+    grid-area: hd; 
+    display: inline-block;
+    margin-left: 1.5em;
+    z-index: 1;
+    margin: 0;
+    transform: translate(85%);
 }
 
 #nav.box.grid {
@@ -271,8 +269,17 @@ span.text#playing {
 
 
 /* -------------------  TABLET  --------------------- */
-  
+@media screen and (min-width: 768px) {
+    
+}
+
+/* -------------------  LAPTOP  --------------------- */
+@media screen and (min-width: 678px) {
+    
+}
  /* -------------------  DESKTOP  -------------------- */
-  
+@media (min-width: 1040px) {
+    
+}
 /* -------------------  LARGE SCREENS  -------------- */
   
