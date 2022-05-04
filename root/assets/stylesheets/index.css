@@ -261,13 +261,13 @@ span.text#playing {
 }
 
 #gallery {
-    grid-area: gall; 
+    grid-area: gall; Pr
 }
 
 
 
 /* -------------------  TABLET  --------------------- */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1199px) {
     i {
         display: inline-block;
         text-align: center;
@@ -315,13 +315,13 @@ span.text#playing {
         color: var(--darkest);
         padding: unset;
         margin-top: unset;
+        /* display: none; */
 
     }
 
     #icons.box.grid {
         display: flex;
         order: -3;
-        background-color: chocolate;
         transform: translate(0, 0);
         background-color: var(--light);
 
@@ -402,8 +402,9 @@ span.text#playing {
    }
 } */
  /* -------------------  DESKTOP  -------------------- */
-/* @media (min-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1199px) {
    
-} */
+}
+
 /* -------------------  LARGE SCREENS  -------------- */
   
