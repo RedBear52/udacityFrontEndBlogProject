@@ -98,7 +98,7 @@ p {
 }
 
 i {
-    padding: .5em;
+    padding: 1em;
 }
 
 /* Form Element Settings */
@@ -191,10 +191,10 @@ select {
 #icons { 
     grid-area: hd; 
     display: inline-block;
-    margin-left: 1.5em;
-    z-index: 1;
-    margin: 0;
-    transform: translate(85%);
+    /* margin-left: 1.5em; */
+    z-index: -1;
+    margin-right: 0;
+    text-align: right;
 }
 
 #nav.box.grid {
@@ -282,4 +282,6 @@ span.text#playing {
     
 }
 /* -------------------  LARGE SCREENS  -------------- */
+@media screen and (mmax-width: 1275px) {
   
+  }
